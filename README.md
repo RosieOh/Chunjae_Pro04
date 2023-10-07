@@ -423,17 +423,16 @@
 ## spring-security.xml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:be xmlns="http://www.springframework.org/schema/security"
+<beans:beans xmlns="http://www.springframework.org/schema/security"
              xmlns:beans="http://www.springframework.org/schema/beans"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/security
     http://www.springframework.org/schema/security/spring-security.xsd">
-    <!--  회원가입, 로그인, 비밀글  -->
-</beans:be
-
-## web.xml 
+    <!-- spring-security.xml : 암호화 패턴 설정 파일 -->
+    <beans:bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+</beans:beans>
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"

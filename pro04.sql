@@ -60,7 +60,6 @@ CREATE TABLE board (
 );
 
 -- 기본형 게시판 더미게시글 10개 추가
--- 기본형 게시판 더미게시글 10개 추가
 INSERT INTO board(title, content, author) VALUES ('게시판1', '게시판 1번 글 입니다.', 'admin');
 INSERT INTO board(title, content, author) VALUES ('게시판2', '게시판 2번 글 입니다.', 'admin');
 INSERT INTO board(title, content, author) VALUES ('게시판3', '게시판 3번 글 입니다.', 'admin');
@@ -171,8 +170,8 @@ CREATE TABLE lecture (
                          lcode VARCHAR(200),																-- 강의코드
                          lname VARCHAR(100),																-- 강의명
                          lfile VARCHAR(500),																-- 강의파일(영상으로 받아오기)
-                         FOREIGN KEY(lscode) REFERENCES subject(scode) ON DELETE CASCADE		-- 과목 코드(subject 테이블에서 외래키로 받아오기)
-                             bcode VARCHAR(100),																-- 교재 코드
+                         FOREIGN KEY(lscode) REFERENCES subject(scode) ON DELETE CASCADE,		-- 과목 코드(subject 테이블에서 외래키로 받아오기)
+                         bcode VARCHAR(100),																-- 교재 코드
                          pcode VARCHAR(100),																-- 강사코드
                          stup VARCHAR(100),																-- stup(student point) : 수강 인원 수
 );
@@ -180,8 +179,8 @@ CREATE TABLE lecture (
 -- 수강(수강코드, 강의코드, 학생아이디, 수강총시간, 수강완료여부)
 CREATE TABLE applylecture (
                               alcode VARCHAR(200) NOT NULL,																		--
-                              FOREIGN KEY(allec_code) REFERENCES lecture(lcode) ON DELETE CASCADE
-                                  stuid VARCHAR(100) NOT NULL,
+                              FOREIGN KEY(allec_code) REFERENCES lecture(lcode) ON DELETE CASCADE,
+                              stuid VARCHAR(100) NOT NULL,
                               altime TIMESTAMP default CURRENT_TIMESTAMP,
                               per INT,
 );

@@ -9,22 +9,11 @@ import java.util.List;
 
 @Repository
 public class TestRepositoryImpl implements TestRepository {
-
     @Autowired
     private SqlSession sqlSession;
 
     @Override
-    public List<Test> testList() throws Exception {
-        return sqlSession.selectList("test.testList");
-    }
-
-    @Override
-    public Test getTest(int num) throws Exception {
-        return sqlSession.selectOne("test.getTest", num);
-    }
-
-    @Override
-    public void testInsert(Test test) throws Exception {
-        sqlSession.insert("test.testInsert", test);
+    public List<Test> getTestList() throws Exception {
+        return sqlSession.selectList("test.getTestList");
     }
 }

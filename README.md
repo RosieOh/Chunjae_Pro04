@@ -5,7 +5,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>kr.co.teaspoon</groupId>
+  <groupId>kr.ed.teaspoon</groupId>
   <artifactId>pro03</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
@@ -399,12 +399,12 @@
 
     <!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
     <!-- 여기안에 컨트롤러 dto, dao 등을 만들어서 사용 -->
-    <context:component-scan base-package="kr.co.teaspoon"/>
+    <context:component-scan base-package="kr.ed.teaspoon"/>
     <annotation-driven /> <!-- 이게 없으면 연결이 안됨 -->
 
     <!-- 인터셉터 : 글쓰기와 같은 회원권한을 가진 경우는 반드시 로그인 페이지를 거쳐서 시도할 것  -->
-<!--    <beans:bean id="sampleIntercepter" class="kr.co.teaspoon.util.SampleIntercepter" />-->
-<!--    <beans:bean id="adminIntercepter" class="kr.co.teaspoon.util.AdminIntercepter" />-->
+<!--    <beans:bean id="sampleIntercepter" class="kr.ed.teaspoon.util.SampleIntercepter" />-->
+<!--    <beans:bean id="adminIntercepter" class="kr.ed.teaspoon.util.AdminIntercepter" />-->
 <!--    <interceptors>-->
 <!--        <interceptor>-->
 <!--            &lt;!&ndash; free 디렉토리 내의 모든 것은 sampleIntercepter 클래스에서 제시한 조건이 맞으면 접근 가능 &ndash;&gt;-->
@@ -510,19 +510,19 @@
     <logger name="org.springframework.web">
         <level value="info" />
     </logger>
-    <logger name="kr.co.teaspoon.controller">
+    <logger name="kr.ed.teaspoon.controller">
         <level value="info"/>
     </logger>
-    <logger name="kr.co.teaspoon.dao">
+    <logger name="kr.ed.teaspoon.dao">
         <level value="info"/>
     </logger>
-    <logger name="kr.co.teaspoon.dto">
+    <logger name="kr.ed.teaspoon.dto">
         <level value="info"/>
     </logger>
-    <logger name="kr.co.teaspoon.service">
+    <logger name="kr.ed.teaspoon.service">
         <level value="info"/>
     </logger>
-    <logger name="kr.co.teaspoon.util">
+    <logger name="kr.ed.teaspoon.util">
         <level value="info"/>
     </logger>
     <root>
@@ -595,7 +595,7 @@ log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
 <configuration>
     <typeAliases>
         <!-- teaspoon 내의 모든 패키지 사용 가능 -->
-        <package name="kr.co.teaspoon"/>
+        <package name="kr.ed.teaspoon"/>
     </typeAliases>
 </configuration>
 ```
@@ -609,12 +609,12 @@ log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
 <mapper namespace="sample">
     <!-- sql의 select 구문을 입력 -->
     <!-- resultType : 결과를 무슨 타입으로 볼 건지 설정 -->
-    <select id="sampleList" resultType="kr.co.teaspoon.dto.Sample">
+    <select id="sampleList" resultType="kr.ed.teaspoon.dto.Sample">
         select * from sample
     </select>
 
     <!-- ? 대신 #{}을 사용, #{}는 mybatis의 값이다. -->
-    <select id="sampleDetail" resultType="kr.co.teaspoon.dto.Sample">
+    <select id="sampleDetail" resultType="kr.ed.teaspoon.dto.Sample">
         select * from sample where no=#{no}
     </select>
     <select id="sampleCount" resultType="integer">

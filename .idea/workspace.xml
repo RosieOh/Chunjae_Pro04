@@ -12,7 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1433eed6-b209-4ec4-9cc8-9a82ebc0ab8b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/ApplylectureMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/ApplylectureMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/BoardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/BoardMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/UserMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +26,9 @@
       <list>
         <option value="Jsp File" />
         <option value="Servlet" />
-        <option value="Class" />
-        <option value="Interface" />
         <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,7 +53,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2WYnY9eTRKdxlRxi4ukjXs6qD2E" />
   <component name="ProjectViewState">
@@ -187,7 +189,7 @@
       <workItem from="1696919374211" duration="152000" />
       <workItem from="1696919619539" duration="1124000" />
       <workItem from="1696937224883" duration="1782000" />
-      <workItem from="1696983546951" duration="10646000" />
+      <workItem from="1696983546951" duration="13038000" />
     </task>
     <servers />
   </component>

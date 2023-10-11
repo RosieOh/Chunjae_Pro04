@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class textbook {
+public class Textbook {
     private String tbcode;
     private String tbname;
     private String tbindex;

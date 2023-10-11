@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class applylecture {
+public class Applylecture {
     private String alcode;
     private String allec_code;
     private String stuid;

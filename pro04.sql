@@ -178,10 +178,12 @@ CREATE TABLE lecture (
 
 -- 수강(수강코드, 강의코드, 학생아이디, 수강총시간, 수강완료여부)
 CREATE TABLE applylecture (
+                              alno int primary key auto_increment,
                               alcode VARCHAR(200) NOT NULL,																		--
                               FOREIGN KEY(allec_code) REFERENCES lecture(lcode) ON DELETE CASCADE,
                               stuid VARCHAR(100) NOT NULL,
                               altime TIMESTAMP default CURRENT_TIMESTAMP,
+                              visit INT DEFAULT 0,
                               per INT,
 );
 

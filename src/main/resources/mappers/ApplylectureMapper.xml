@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ed.haebeop.persistence.ApplylectureMapper">
+    <select id="getApplylectureList" resultType="kr.ed.haebeop.domain.Applylecture">
+        SELECT * FROM applylecture
+    </select>
+
+    <select id="getApplylectureByAlno" parameterType="int" resultType="kr.ed.haebeop.domain.Applylecture">
+        SELECT * FROM applylecture WHERE alno = #{alno}
+    </select>
+
+    <insert id="insertApplylecture" parameterType="kr.ed.haebeop.domain.Applylecture">
+        INSERT INTO applylecture (alcode, allec_code, stuid, altime, per)
+        VALUES (#{alcode}, #{allec_code}, #{stuid}, #{altime}, #{per})
+    </insert>
+
+    <delete id="deleteApplylecture" parameterType="string">
+        DELETE FROM applylecture WHERE alcode = #{alcode}
+    </delete>
+
+    <update id="updateApplylecture" parameterType="kr.ed.haebeop.domain.Applylecture">
+        UPDATE applylecture
+        SET allec_code = #{allec_code}, stuid = #{stuid}, altime = #{altime}, visit = #{visit}, per = #{per}
+        WHERE alno = #{alno}
+    </update>
+
+    <update id="countUp" parameterType="int">
+        UPDATE applylecture SET visit = visit + 1 WHERE alno = #{alno}
+    </update>
+</mapper>

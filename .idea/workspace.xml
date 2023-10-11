@@ -10,7 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1433eed6-b209-4ec4-9cc8-9a82ebc0ab8b" name="Changes" comment="" />
+    <list default="true" id="1433eed6-b209-4ec4-9cc8-9a82ebc0ab8b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +73,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\oth\spring\springframework\Chunjae_Pro04\src\main\webapp\WEB-INF\resources" />
       <recent name="D:\oth\spring\springframework\Chunjae_Pro04\src\main\webapp\WEB-INF\views\board" />
     </key>
   </component>
@@ -189,7 +192,7 @@
       <workItem from="1696919374211" duration="152000" />
       <workItem from="1696919619539" duration="1124000" />
       <workItem from="1696937224883" duration="1782000" />
-      <workItem from="1696983546951" duration="16314000" />
+      <workItem from="1696983546951" duration="16614000" />
     </task>
     <servers />
   </component>

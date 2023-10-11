@@ -12,9 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1433eed6-b209-4ec4-9cc8-9a82ebc0ab8b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/ApplylectureMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/ApplylectureMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/BoardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/BoardMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/persistence/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/config/ServletContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/config/ServletContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/check/checkList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/check/checkList.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +23,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Servlet" />
         <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -74,6 +73,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\oth\spring\springframework\Chunjae_Pro04\src\main\webapp\WEB-INF\views\board" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="excludedTypes">
       <set>
@@ -189,7 +193,7 @@
       <workItem from="1696919374211" duration="152000" />
       <workItem from="1696919619539" duration="1124000" />
       <workItem from="1696937224883" duration="1782000" />
-      <workItem from="1696983546951" duration="13038000" />
+      <workItem from="1696983546951" duration="15794000" />
     </task>
     <servers />
   </component>

@@ -186,7 +186,7 @@ CREATE TABLE applylecture (
 );
 
 -- 강사(강사코드, 강사명, 연락처, 이메일)
-crete TABLE teacher (
+create TABLE teacher (
 	tcode VARCHAR(100) NOT NULL,
 	tname VARCHAR(50) NOT NULL,
 	ttel VARCHAR(50) NOT NULL,

@@ -77,6 +77,17 @@ SELECT * FROM board;
 
 ------------------------------------------------------------------------------------------------------
 
+-- 출석체크 테이블 생성
+CREATE TABLE attendance (
+                            ano INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                            id VARCHAR(16) NOT NULL,
+                            title VARCHAR(100) NOT NULL,
+                            content VARCHAR(2000) NOT NULL,
+                            regdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+------------------------------------------------------------------------------------------------------
+
 CREATE TABLE free (
                       fno INT PRIMARY KEY AUTO_INCREMENT,
                       title VARCHAR(200) NOT NULL,
@@ -114,7 +125,6 @@ CREATE TABLE qna(
                     visit INT DEFAULT 0,
                     lev INT DEFAULT 0,
                     par INT,
-                    secret BOOLEAN DEFAULT FALSE,
                     FOREIGN KEY(author) REFERENCES user(id) ON DELETE CASCADE
 );
 
@@ -143,6 +153,11 @@ create table notice(
                        visit int DEFAULT 0
 );
 
+COMMIT;
+
+SELECT * FROM notice;
+------------------------------------------------------------------------------------------------------
+
 -- 자료실(순번, 제목, 내용, 자료파일1, 자료파일2, 자료파일3, 작성일, 작성자, 읽은 횟수)
 CREATE TABLE dataroom (
                           dno INT PRIMARY KEY AUTO_INCREMENT,
@@ -156,7 +171,35 @@ CREATE TABLE dataroom (
 
 COMMIT;
 
-select * from filetest2;
+SELECT * FROM dataroom;
+
+------------------------------------------------------------------------------------------------------
+
+-- 자료실 자료 데이터 테이블 생성
+CREATE TABLE fileInfo(
+                         no INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                         articleno INT,
+                         saveFolder VARCHAR(300) NOT NULL,
+                         originFile VARCHAR(300) NOT NULL,
+                         saveFile VARCHAR(300) NOT NULL
+);
+
+COMMIT;
+
+SELECT * FROM fileInfo;
+
+------------------------------------------------------------------------------------------------------
+
+-- 자료실 테이블 생성
+CREATE TABLE fileboard(
+                          articleno INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                          id VARCHAR(16) NOT NULL,
+                          title VARCHAR(100) NOT NULL,
+                          content VARCHAR(2000) NOT NULL,
+                          regdate TIMESTAMP NOT NULL CURRENT_TIMESTAMP
+);
+
+------------------------------------------------------------------------------------------------------
 
 -- 과목(과목코드, 과목명, 과목단가)
 CREATE TABLE subject (
@@ -170,25 +213,23 @@ CREATE TABLE lecture (
                          lcode VARCHAR(200),																-- 강의코드
                          lname VARCHAR(100),																-- 강의명
                          lfile VARCHAR(500),																-- 강의파일(영상으로 받아오기)
-                         FOREIGN KEY(lscode) REFERENCES subject(scode) ON DELETE CASCADE,		-- 과목 코드(subject 테이블에서 외래키로 받아오기)
-                         bcode VARCHAR(100),																-- 교재 코드
+                         FOREIGN KEY(lscode) REFERENCES subject(scode) ON DELETE CASCADE		-- 과목 코드(subject 테이블에서 외래키로 받아오기)
+                             bcode VARCHAR(100),																-- 교재 코드
                          pcode VARCHAR(100),																-- 강사코드
                          stup VARCHAR(100),																-- stup(student point) : 수강 인원 수
 );
 
 -- 수강(수강코드, 강의코드, 학생아이디, 수강총시간, 수강완료여부)
 CREATE TABLE applylecture (
-                              alno int primary key auto_increment,
                               alcode VARCHAR(200) NOT NULL,																		--
-                              FOREIGN KEY(allec_code) REFERENCES lecture(lcode) ON DELETE CASCADE,
-                              stuid VARCHAR(100) NOT NULL,
+                              FOREIGN KEY(allec_code) REFERENCES lecture(lcode) ON DELETE CASCADE
+                                  stuid VARCHAR(100) NOT NULL,
                               altime TIMESTAMP default CURRENT_TIMESTAMP,
-                              visit INT DEFAULT 0,
                               per INT,
 );
 
 -- 강사(강사코드, 강사명, 연락처, 이메일)
-create TABLE teacher (
+crete TABLE teacher (
 	tcode VARCHAR(100) NOT NULL,
 	tname VARCHAR(50) NOT NULL,
 	ttel VARCHAR(50) NOT NULL,

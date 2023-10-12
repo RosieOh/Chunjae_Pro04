@@ -11,7 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1433eed6-b209-4ec4-9cc8-9a82ebc0ab8b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pro04.sql" beforeDir="false" afterPath="$PROJECT_DIR$/pro04.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/domain/Dataroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/domain/Dataroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/domain/Qna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/ed/haebeop/domain/Qna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/DataroomMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/FreeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/LectureMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/NoticeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/QnaMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/SubjectMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/TeacherMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/TextbookMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +34,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Servlet" />
+        <option value="Jsp File" />
         <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -62,7 +74,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/otaehun/Desktop/chunjae_pro/4차 개인 프로젝트/Chunjae_Pro04",
+    "last_opened_file_path": "D:/oth/spring/springframework/Chunjae_Pro04/src/main/webapp/WEB-INF/views/template",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,7 +84,11 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\oth\spring\springframework\Chunjae_Pro04\src\main\webapp\WEB-INF\views\template" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\oth\spring\springframework\Chunjae_Pro04\src\main\resources\mappers" />
       <recent name="D:\oth\spring\springframework\Chunjae_Pro04\src\main\webapp\WEB-INF\resources" />
       <recent name="D:\oth\spring\springframework\Chunjae_Pro04\src\main\webapp\WEB-INF\views\board" />
     </key>
@@ -192,7 +208,8 @@
       <workItem from="1696919374211" duration="152000" />
       <workItem from="1696919619539" duration="1124000" />
       <workItem from="1696937224883" duration="1782000" />
-      <workItem from="1696983546951" duration="16614000" />
+      <workItem from="1696983546951" duration="16972000" />
+      <workItem from="1697070166749" duration="14066000" />
     </task>
     <servers />
   </component>

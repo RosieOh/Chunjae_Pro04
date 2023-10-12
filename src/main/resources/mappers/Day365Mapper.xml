@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ed.haebeop.persistence.Day365Mapper">
+<select id="getAllDays" resultType="kr.ed.haebeop.domain.Day365">
+    <!-- 모든 Day365 객체를 검색하는 SQL 쿼리 -->
+    SELECT * FROM day365_table
+</select>
+
+<select id="getDayByName" parameterType="String" resultType="kr.ed.haebeop.domain.Day365">
+    <!-- 특정 이름에 해당하는 Day365 객체를 검색하는 SQL 쿼리 -->
+    SELECT * FROM day365 WHERE name = #{name}
+</select>
+
+<insert id="insertDay" parameterType="kr.ed.haebeop.domain.Day365">
+    <!-- Day365 객체를 데이터베이스에 삽입하는 SQL 쿼리 -->
+    INSERT INTO day365 (name, cal) VALUES (#{name}, #{cal})
+</insert>
+
+<update id="updateDay" parameterType="kr.ed.haebeop.domain.Day365">
+    <!-- Day365 객체를 업데이트하는 SQL 쿼리 -->
+    UPDATE day365 SET cal = #{cal} WHERE name = #{name}
+</update>
+
+<delete id="deleteDay" parameterType="String">
+    <!-- 특정 이름에 해당하는 Day365 객체를 삭제하는 SQL 쿼리 -->
+    DELETE FROM day365 WHERE name = #{name}
+</delete>
+</mapper>

@@ -350,6 +350,13 @@
       <version>4.0.1</version>
     </dependency>
 
+    <!-- 채팅 웹소켓  추가 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-websocket</artifactId>
+      <version>5.3.20</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>pro04</finalName>

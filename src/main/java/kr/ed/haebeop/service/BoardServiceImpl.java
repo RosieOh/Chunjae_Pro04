@@ -2,6 +2,7 @@ package kr.ed.haebeop.service;
 
 import kr.ed.haebeop.domain.Board;
 import kr.ed.haebeop.persistence.BoardMapper;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,8 @@ public class BoardServiceImpl implements BoardService {
 
     @Autowired
     private BoardMapper boardMapper;
+
+    private SqlSession sqlSession;
 
     @Override
     public List<Board> boardList() throws Exception {

@@ -1,6 +1,6 @@
 package kr.ed.haebeop.util;
 
-import kr.ed.haebeop.domain.Days365;
+import kr.ed.haebeop.domain.Day365;
 
 import java.util.*;
 import java.text.*;
@@ -43,14 +43,14 @@ public class DatePicker {
    }
 
    //국경일 생성 - 명절 및 석탄일 제외
-   public List<Days365> generatorHoliday(String yyyy){
-       List<Days365> daysList = new ArrayList<>();
+   public List<Day365> generatorHoliday(String yyyy){
+       List<Day365> daysList = new ArrayList<>();
 
        String[][] daysArray = {{"0101","신정"}, {"0301","삼일절"}, {"0505","어린이날"}, {"0606", "현충일"},
                {"0815","광복절"}, {"1003","개천절"}, {"1009","한글날"}, {"1225","성탄절"}};
 
        for(String[] days:daysArray) {
-           Days365 day365 = new Days365();
+           Day365 day365 = new Day365();
            Calendar cal = Calendar.getInstance();
            String month = days[0].substring(0, 2);
            String day = days[0].substring(2, 4);

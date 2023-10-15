@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Member {
     private String id;
     private String pw;
-    private String NAME;
+    private String name;
     private String email;
     private String tel;
     private String addr1;
@@ -20,4 +20,5 @@ public class User {
     private String birth;
     private int pt;
     private int visited;
+
 }

@@ -1,43 +1,40 @@
 package kr.ed.haebeop.service;
+import java.util.List;
 
-import kr.ed.haebeop.domain.Board;
-import kr.ed.haebeop.persistence.BoardMapper;
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import kr.ed.haebeop.repository.BoardRepository;
+import kr.ed.haebeop.domain.Board;
 
 @Service
 public class BoardServiceImpl implements BoardService {
 
     @Autowired
-    private BoardMapper boardMapper;
-
-    private SqlSession sqlSession;
+    private BoardRepository boardRepository;
 
     @Override
     public List<Board> boardList() throws Exception {
-        return boardMapper.boardList();
+        return boardRepository.boardList();
     }
 
     @Override
-    public Board boardDetail(int bno) throws Exception {
-        return boardMapper.boardDetail(bno);
+    public Board boardDetail(int seq) throws Exception {
+        return boardRepository.boardDetail(seq);
     }
 
     @Override
-    public void boardInsert(Board domain) throws Exception {
-        boardMapper.boardInsert(domain);
+    public void boardInsert(Board dto) throws Exception {
+        boardRepository.boardInsert(dto);
     }
 
     @Override
-    public void boardDelete(int bno) throws Exception {
-        boardMapper.boardDelete(bno);
+    public void boardDelete(int seq) throws Exception {
+        boardRepository.boardDelete(seq);
     }
 
     @Override
-    public void boardEdit(Board domain) throws Exception {
-        boardMapper.boardEdit(domain);
+    public void boardEdit(Board dto) throws Exception {
+        boardRepository.boardEdit(dto);
     }
 }

@@ -7,11 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class FileDTO {
-    private String uuid;
-    private String uploadpath;
-    private String filename;
-    private String filetype;
+public class Record {
+    private int rno;
     private int bno;
+    private String id;
+    private int flag;
 }

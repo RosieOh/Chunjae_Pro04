@@ -5,12 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Notice {
-    private int nno;
-    private String title;
+@AllArgsConstructor
+public class FreeComment {
+    private int cno;
+    private int fno;
     private String content;
     private String resdate;
-    private int visit;
+    private String author;
+    private String name;
 }

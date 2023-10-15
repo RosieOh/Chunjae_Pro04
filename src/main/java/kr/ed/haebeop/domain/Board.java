@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Board {
-    private int bno;
+    private int seq;
     private String title;
     private String content;
-    private String author;
+    private String nickname;
     private String regdate;
-    private int visit;
+    private int visited;
 }

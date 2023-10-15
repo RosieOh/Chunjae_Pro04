@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.ed.haebeop.persistence.BoardMapper">
+<mapper namespace="board">
     <!-- 공지사항 목록 -->
-    <select id="boardList" resultType="kr.ed.haebeop.domain.Board">
+    <select id="boardList" resultType="kr.co.teaspoon.dto.Board">
         select * from board order by regdate desc
     </select>
     <!-- 글 상세보기 -->
-    <select id="boardDetail" resultType="kr.ed.haebeop.domain.Board">
-        select * from board where bno=#{bno}
+    <select id="boardDetail" resultType="kr.co.teaspoon.dto.Board">
+        select * from board where seq=#{seq}
     </select>
     <!-- 글 수 카운트 -->
-    <select id="totalCount" resultType="java.lang.Integer">
+    <select id="totalCount" resultType="integer" >
         select count(*) from board
     </select>
-    <insert id="boardInsert" parameterType="kr.ed.haebeop.domain.Board">
-        insert into board (title, content, author, regdate, visit) values (#{title}, #{content}, #{author}, #{regdate}, #{visit})
+    <insert id="boardInsert">
+        insert into board values (default, #{title}, #{content}, 'admin', default, default)
     </insert>
-    <delete id="boardDelete" parameterType="java.lang.Integer">
-        delete from board where bno=#{bno}
+    <delete id="boardDelete">
+        delete from board where seq=#{seq}
     </delete>
-    <update id="boardEdit" parameterType="kr.ed.haebeop.domain.Board">
-        update board set title=#{title}, content=#{content} where bno=#{bno}
+    <update id="boardEdit">
+        update board set title=#{title}, content=#{content} where seq=#{seq}
     </update>
-    <update id="countUp" parameterType="java.lang.Integer">
-        update board set visit=visit+1 where bno=#{bno}
+    <update id="countUp">
+        update board set visited=visited+1 where seq=#{seq}
     </update>
 </mapper>

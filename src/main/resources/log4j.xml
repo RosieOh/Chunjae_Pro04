@@ -13,15 +13,15 @@
         <level value="info" />
     </logger>
 
-    <logger name="kr.ed.haebeop.exception">
-        <level value="info" />
-    </logger>
-
     <logger name="kr.ed.haebeop.controller">
         <level value="info" />
     </logger>
 
     <logger name="kr.ed.haebeop.domain">
+        <level value="info" />
+    </logger>
+
+    <logger name="kr.ed.haebeop.exception">
         <level value="info" />
     </logger>
 
@@ -65,9 +65,7 @@
     <logger name="org.springframework.web">
         <level value="info" />
     </logger>
-    <logger name="org.springframework.test">
-        <level value="info" />
-    </logger>
+
     <root>
         <priority value="warn"/>
         <appender-ref ref="console"/>

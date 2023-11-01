@@ -1,56 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ed.haebeop.persistence.UserMapper">
-    <!-- 회원 목록 보기 -->
-    <select id="UserList" resultType="kr.ed.haebeop.domain.User">
-        SELECT * FROM user order by regdate desc;
+    <select id="userList" resultType="kr.ed.haebeop.domain.User">
+        <![CDATA[
+            select * from user
+        ]]>
+        <where>
+             <if test="searchType != null">
+                <choose>
+                    <when test="searchType == 'id'.toString()">
+                        id LIKE concat('%', #{searchKeyword}, '%')
+                    </when>
+                    <when test="searchType == 'name'.toString()">
+                        name LIKE concat('%', #{searchKeyword}, '%')
+                    </when>
+                    <when test="searchType == 'email'.toString()">
+                        email LIKE concat('%', #{searchKeyword}, '%')
+                    </when>
+                    <when test="searchType == 'tel'.toString()">
+                        tel LIKE concat('%', #{searchKeyword}, '%')
+                    </when>
+                </choose>
+             </if>
+        </where>
+        <![CDATA[
+            order by id asc LIMIT #{postStart}, #{postCount}
+        ]]>
     </select>
 
-    <!-- 회원 상세 정보 보기 -->
-    <select id="getUser" resultType="kr.ed.haebeop.domain.User">
-        select * from user where id=#{id}
-    </select>
-    <!-- 회원 수 카운트 -->
     <select id="userCount" resultType="integer">
-        select count(*) from user;
+        <![CDATA[
+            select count(*) from user
+        ]]>
+            <where>
+                    <if test="searchType != null">
+                        <choose>
+                            <when test="searchType == 'id'.toString()">
+                                id LIKE concat('%', #{searchKeyword}, '%')
+                            </when>
+                            <when test="searchType == 'name'.toString()">
+                                name LIKE concat('%', #{searchKeyword}, '%')
+                            </when>
+                            <when test="searchType == 'email'.toString()">
+                                email LIKE concat('%', #{searchKeyword}, '%')
+                            </when>
+                            <when test="searchType == 'tel'.toString()">
+                                tel LIKE concat('%', #{searchKeyword}, '%')
+                            </when>
+                        </choose>
+                    </if>
+            </where>
     </select>
 
-    <!-- 로그인을 컨트롤러에서 처리 -->
+    <sql id="criteria">
+        <where>
+            <trim prefixOverrides="OR">
+                <foreach item="type" collection="typeArr">
+                    <trim prefixOverrides="OR">
+                        <choose>
+                            <when test="type == 'I'.toString()">
+                                id LIKE '%' || #{keyword } || '%'
+                            </when>
+                            <when test="type == 'N'.toString()">
+                                name LIKE '%' || #{keyword } || '%'
+                            </when>
+                            <when test="type == 'E'.toString()">
+                                email LIKE '%' || #{keyword } || '%'
+                            </when>
+                            <when test="type == 'T'.toString()">
+                                tel LIKE '%' || #{keyword } || '%'
+                            </when>
+                        </choose>
+                    </trim>
+                </foreach>
+            </trim>
+        </where>
+    </sql>
+
+    <select id="getListWithPaging" resultType="kr.ed.haebeop.domain.User">
+        <![CDATA[
+            select * from user
+        ]]>
+        <include refid="criteria" />
+        <![CDATA[
+            ORDER BY id ASC LIMIT ((#{pageNum} - 1) * #{amount}), #{amount}
+        ]]>
+    </select>
+
+    <select id="getUser" resultType="kr.ed.haebeop.domain.User">
+        select * from user where id=#{id }
+    </select>
+    <!--컨트롤러-->
     <select id="signIn" resultType="kr.ed.haebeop.domain.User">
-        select * from user where id=#{id}
+        select * from user where id=#{id }
     </select>
-
-    <!-- 로그인 : 서비스에서 처리 -->
+    <!--DAO-->
     <select id="loginCheck" resultType="kr.ed.haebeop.domain.User">
-        select id, pw, name from user where id=#{id}
+        select id, pw, name from user where id=#{id }
     </select>
-
-    <!-- 로그인 : Ajax에서 처리 -->
-    <select id="login" resultType="kr.ed.haebeop.domain.User">
-        select id, pw, name from user where id=#{id}
+    <!--Ajax-->
+    <select id="logIn" resultType="kr.ed.haebeop.domain.User">
+        select id, pw, name from user where id=#{id }
     </select>
-
-    <!-- 회원 가입 -->
     <insert id="userInsert">
-        inser into user values (#{id}, #{pw}, #{name}, #{email}, #{tel}, #{addr1}, #{addr2}, #{postcode}, default, #{birth}, default, default)
+        insert into user values(#{id }, #{pw }, #{name }, #{email }, #{tel }, #{addr1 }, #{addr2}, #{postcode }, default, #{birth }, #{pt }, #{visited })
     </insert>
-
-    <!-- 회원 탈퇴 -->
+    <update id="userUpdate">
+        update user set pw=#{pw }, name=#{name }, email=#{email }, tel=#{tel }, addr1=#{addr1 }, addr2=#{addr2 }, postcode=#{postcode } where id=#{id }
+    </update>
     <delete id="userDelete">
-        delete from user where id=#{id}
+        delete from user where id=#{id }
     </delete>
 
-    <!-- 회원정보 수정 -->
-    <update id="userEdit">
-        update user set pw=#{pw }, name=#{name}, email=#{email}, tel=#{tel},  addr1=#{addr1 }, addr2=#{addr2 }, postcode=#{postcode } where id = #{id }
-    </update>
-
-    <!-- "findByEmail"과 관련된 MyBatis Mapper(xml) -->
-    <select id="findByEmail" resultType="java.lang.String">
-        select id from user where email=#{email}
-    </select>
-
-    <select id="findPassword" resultType="java.lang.String">
-        select pw from user where id=#{id} and email=#{email}
-    </select>
 </mapper>

@@ -1,4 +1,4 @@
-# team24!
+# SmartHaebeop_SoloProj04
 ![heabeop](./document/1.png)
 ![heabeop](./document/4.png)
 ![heabeop](./document/5.png)

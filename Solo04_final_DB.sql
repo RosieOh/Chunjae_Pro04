@@ -46,9 +46,9 @@ CREATE TABLE teacher (
                          email VARCHAR(150)
 );
 
-INSERT INTO teacher VALUES(DEFAULT, "이나현", "01012341234", "sksmsdlskgus@academy.com");
-INSERT INTO teacher VALUES(DEFAULT, "박다혜", "01012341234", "hyedal@academy.com");
-INSERT INTO teacher VALUES(DEFAULT, "권은빈", "01012341234", "eunbeen@academy.com");
+INSERT INTO teacher VALUES(DEFAULT, "전소연", "01012341234", "wjsthdus@academy.com");
+INSERT INTO teacher VALUES(DEFAULT, "박은빈", "01012341234", "qkrdmsqls@academy.com");
+INSERT INTO teacher VALUES(DEFAULT, "신세경", "01012341234", "tlstprud@academy.com");
 
 SELECT * FROM teacher;
 

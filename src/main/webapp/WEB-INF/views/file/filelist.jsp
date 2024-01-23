@@ -51,7 +51,7 @@
     <p class="title has-text-centered mt-1 mb-2">자료실</p>
 </nav>
 
-<div class="container">
+<div class="container" style="min-height: 100vh;">
     <div class="columns is-multiline mt-1 mx-5">
         <div class="column is-4">
             <form action="${path1 }/file/list.do" method="get" class="field has-addons">
